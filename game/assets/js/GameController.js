@@ -99,7 +99,9 @@ function fix() {
     }else{
         score = score + point2;
     }
-    playSound('coin.wav');
+    // playSound('coin.wav');
+    mySound = new sound("assets/sound/coin.wav");
+    mySound.play();
     showCoin();
 
     setColor();
@@ -136,7 +138,9 @@ function hideBoom() {
     document.getElementById('heart'+heart).style.display = 'none';
     heart -=1;    
     countClick =1;
-    playSound('boom.wav');
+    // playSound('boom.wav');
+    mySound = new sound("assets/sound/boom.wav");
+    mySound.play();
     timerEndGame = setTimeout(function () {
                      
         renderScore();
@@ -206,7 +210,9 @@ function countDown() {
     timeBoard.innerText = time;
     if (time <= 0) {        
         clearInterval(timer);
-        playSound('over.wav');
+        // playSound('over.wav');
+        mySound = new sound("assets/sound/over.wav");
+        mySound.play();
         endGame();
     }
 }
@@ -239,10 +245,10 @@ function setColor(){
     document.getElementById('showpoint').innerText = checkin.offsetLeft;
 }
 
-function playSound(soundfile) {
-    document.getElementById("soundGame").innerHTML=
-      "<embed src=\"assets/sound/"+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
-}
+// function playSound(soundfile) {
+//     document.getElementById("soundGame").innerHTML=
+//       "<embed src=\"assets/sound/"+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
+// }
 
 function playAudio() { 
     
@@ -265,7 +271,10 @@ function endGame() {
     
     IsPlaying = false;
     
-    playSound('over.wav');
+    // playSound('over.wav');
+
+    mySound = new sound("assets/sound/over.wav");
+    mySound.play();
     clearInterval(timerEndGame);
     clearInterval(idleInterval);
 
