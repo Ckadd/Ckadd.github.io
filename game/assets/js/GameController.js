@@ -45,7 +45,9 @@ var timeBoard = document.getElementById('time'),
 
 function startGame() {
     getRandomCar();
-
+    mySound = new sound("assets/sound/countdown.wav");
+    mySound.play();
+    
     myMusic = new sound("assets/sound/background.mp3");
     myMusic.play();
     
@@ -58,8 +60,7 @@ function startGame() {
     document.getElementById('countdown').src = 'assets/images/'+timeStartGame+'.png'
     document.getElementById('countdown').style.display = 'block'
     // playSound('countdown.wav');
-    mySound = new sound("assets/sound/countdown.wav");
-    mySound.play();
+
     timerStartGame = setInterval(countDownStartGame,1000);
     document.getElementById('heart1').style.display = 'block';
     document.getElementById('heart2').style.display = 'block';
