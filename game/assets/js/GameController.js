@@ -37,34 +37,33 @@ var timeBoard = document.getElementById('time'),
     checkin =document.getElementById('checkin')
     ;
 
-    var myGameWhell;
-    var myObstacles = [];
     var mySound;
     var myMusic;
 
-getRandomCar();
+
 
 
 function startGame() {
+    getRandomCar();
 
-    // myGameWhell = new component(30, 30, "red", 10, 120);
-    // mySound = new sound("bounce.mp3");
     myMusic = new sound("assets/sound/background.mp3");
     myMusic.play();
-    myGameArea.start();
+    
 
-    // document.getElementById('showpoint').innerText = checkin.offsetLeft;
-    // btnStart.disabled = "disabled";
-    // time = 60;
-    // timeStartGame = 3;
-    // timeBoard.innerText = time;
-    // document.getElementById('countdown').src = 'assets/images/'+timeStartGame+'.png'
-    // document.getElementById('countdown').style.display = 'block'
+    document.getElementById('showpoint').innerText = checkin.offsetLeft;
+    btnStart.disabled = "disabled";
+    time = 60;
+    timeStartGame = 3;
+    timeBoard.innerText = time;
+    document.getElementById('countdown').src = 'assets/images/'+timeStartGame+'.png'
+    document.getElementById('countdown').style.display = 'block'
     // playSound('countdown.wav');
-    // timerStartGame = setInterval(countDownStartGame,1000);
-    // document.getElementById('heart1').style.display = 'block';
-    // document.getElementById('heart2').style.display = 'block';
-    // document.getElementById('heart3').style.display = 'block';
+    mySound = new sound("assets/sound/countdown.wav");
+    mySound.play();
+    timerStartGame = setInterval(countDownStartGame,1000);
+    document.getElementById('heart1').style.display = 'block';
+    document.getElementById('heart2').style.display = 'block';
+    document.getElementById('heart3').style.display = 'block';
 
 }
 function sound(src) {
@@ -82,24 +81,6 @@ function sound(src) {
     }    
 }
 
-
-var myGameArea = {
-    canvas : document.createElement("canvas"),
-    start : function() {
-        this.canvas.width = 480;
-        this.canvas.height = 270;
-        this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-        this.frameNo = 0;
-        this.interval = setInterval(updateGameArea, 20);
-    },
-    stop : function() {
-        clearInterval(this.interval);
-    },    
-    clear : function() {
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    }
-}
 
 
 /**
