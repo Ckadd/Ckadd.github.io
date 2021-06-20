@@ -45,11 +45,11 @@ var timeBoard = document.getElementById('time'),
 
 function startGame() {
     getRandomCar();
-    mySound = new sound("assets/sound/countdown.wav");
-    mySound.play();
+    // mySound = new sound("assets/sound/countdown.wav");
+    // mySound.play();
     
-    myMusic = new sound("assets/sound/background.mp3");
-    myMusic.play();
+    // myMusic = new sound("assets/sound/background.mp3");
+    // myMusic.play();
     
 
     document.getElementById('showpoint').innerText = checkin.offsetLeft;
