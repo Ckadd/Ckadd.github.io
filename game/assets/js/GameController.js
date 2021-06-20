@@ -26,7 +26,7 @@ var score = 0,
     checkin2=10;
 
 var IsPlaying = false,
-    IsSound = true;
+    IsPlaySound = true;
 var timeBoard = document.getElementById('time'),
     scoreBoard = document.getElementById('score'),
     btnStart = document.getElementById('btn'),
@@ -37,8 +37,8 @@ var timeBoard = document.getElementById('time'),
     checkin =document.getElementById('checkin')
     ;
 
-    var mySound;
-    var myMusic;
+    var mySound = new sound("assets/sound/countdown.wav");
+    var myMusic = new sound("assets/sound/background.mp3");
 
 
 
@@ -75,10 +75,10 @@ function sound(src) {
     this.sound.style.display = "none";
     document.body.appendChild(this.sound);
     this.play = function(){
-        this.sound.play();
+        this.sound.play();              
     }
     this.stop = function(){
-        this.sound.pause();
+        this.sound.pause();        
     }    
 }
 
@@ -100,9 +100,8 @@ function fix() {
     }else{
         score = score + point2;
     }
-    // playSound('coin.wav');
-    mySound = new sound("assets/sound/coin.wav");
-    mySound.play();
+    playSound('coin.wav');
+    
     showCoin();
 
     setColor();
@@ -139,9 +138,8 @@ function hideBoom() {
     document.getElementById('heart'+heart).style.display = 'none';
     heart -=1;    
     countClick =1;
-    // playSound('boom.wav');
-    mySound = new sound("assets/sound/boom.wav");
-    mySound.play();
+     playSound('boom.wav');
+    
     timerEndGame = setTimeout(function () {
                      
         renderScore();
@@ -211,9 +209,8 @@ function countDown() {
     timeBoard.innerText = time;
     if (time <= 0) {        
         clearInterval(timer);
-        // playSound('over.wav');
-        mySound = new sound("assets/sound/over.wav");
-        mySound.play();
+        playSound('over.wav');
+        
         endGame();
     }
 }
@@ -246,25 +243,21 @@ function setColor(){
     document.getElementById('showpoint').innerText = checkin.offsetLeft;
 }
 
-// function playSound(soundfile) {
-//     document.getElementById("soundGame").innerHTML=
-//       "<embed src=\"assets/sound/"+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
-// }
+function playSound(soundfile) {
+    if (IsPlaySound) {        
+        mySound = new sound("assets/sound/"+soundfile);
+        mySound.play();
+    }
+}
 
-function playAudio() { 
-    
-    var myAudio = document.getElementById('myAudio');
+function StopAudio() { 
 
-    if (myAudio.duration > 0 && !myAudio.paused) {
-
-       myAudio.pause();
-       console.log(1)
-
+    if (IsPlaySound) {
+        IsPlaySound = false;
+        myMusic.stop();
     } else {
-        console.log(2)
-        // myAudio.play(); 
-        myAudio.play();
-
+        IsPlaySound = true;
+        myMusic.play();
     }
   } 
   
@@ -272,10 +265,8 @@ function endGame() {
     
     IsPlaying = false;
     
-    // playSound('over.wav');
+    playSound('over.wav');
 
-    mySound = new sound("assets/sound/over.wav");
-    mySound.play();
     clearInterval(timerEndGame);
     clearInterval(idleInterval);
 
