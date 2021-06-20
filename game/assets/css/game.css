@@ -2,8 +2,10 @@ html,
 body {
     font-family: 'Segoe UI';
     text-transform: uppercase;
-    touch-action: manipulation;
 }
+.disable-dbl-tap-zoom {
+    touch-action: manipulation;
+  }
 canvas {
     border:1px solid #d3d3d3;
     background-color: #f1f1f1;

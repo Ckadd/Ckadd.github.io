@@ -5,13 +5,14 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="assets/css/game.css" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Whell</title>
 </head>
 
 <body>
-
+    <div class="round primary disable-dbl-tap-zoom" >
     <ol id="scoreboard">
         <li>Time Left: <span id="time">60</span></li>
         
@@ -61,7 +62,7 @@
     <!-- <audio id="myAudio" controls autoplay hidden>        
         <source src="assets/sound/background.mp3" id="soundBackground" hidden="true" autostart="treu" loop="true" type="audio/ogg">
     </audio> -->
-    
+    </div>
 
     <script type="text/javascript" src="assets/js/GameController.js"></script>
 
