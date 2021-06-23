@@ -2957,7 +2957,8 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.Audio.Acts.SetMuted,
-		C3.Plugins.System.Cnds.Else
+		C3.Plugins.System.Cnds.Else,
+		C3.Plugins.System.Cnds.OnLoadFinished
 		];
 	};
 	self.C3_JsPropNameTable = [
@@ -3112,7 +3113,6 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 			const n2 = p._GetNode(2);
 			return () => f0(f1(0, n2.ExpObject()));
 		},
-		() => 0,
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
@@ -3123,6 +3123,7 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		() => 1,
 		() => -75,
 		() => -90,
+		() => 0,
 		() => "",
 		() => 20,
 		p => {
