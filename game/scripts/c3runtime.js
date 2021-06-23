@@ -2931,8 +2931,8 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		C3.Plugins.Sprite.Exps.AnimationFrameCount,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.System.Acts.SetLayerVisible,
+		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.Audio.Acts.Play,
-		C3.Plugins.Audio.Cnds.IsTagPlaying,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.System.Cnds.Every,
@@ -2953,14 +2953,16 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		C3.Plugins.Sprite.Exps.AnimationFrame,
 		C3.Plugins.System.Cnds.LayerVisible,
 		C3.Plugins.System.Acts.GoToLayout,
-		C3.Plugins.System.Cnds.CompareVar
+		C3.Plugins.Audio.Acts.StopAll,
+		C3.Plugins.Button.Cnds.OnClicked,
+		C3.Plugins.System.Acts.ResetGlobals
 		];
 	};
 	self.C3_JsPropNameTable = [
 		{bg: 0},
 		{StartTimer: 0},
 		{StartCountdown: 0},
-		{AudioStart: 0},
+		{Audio: 0},
 		{tScore: 0},
 		{timer: 0},
 		{bg2: 0},
@@ -2985,7 +2987,7 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		{wheel_f: 0},
 		{Button: 0},
 		{hart: 0},
-		{Button2: 0},
+		{obtnPlayAgain: 0},
 		{Text: 0},
 		{elec: 0},
 		{tElec: 0},
@@ -2998,7 +3000,8 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		{gMaxClick: 0},
 		{gLife: 0},
 		{gidleTime: 0},
-		{gElecper: 0}
+		{gElecper: 0},
+		{gSound: 0}
 	];
 }
 
@@ -3112,10 +3115,10 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 			return () => v0.GetValue();
 		},
 		() => "popup_wheel",
+		() => "on",
 		() => 0,
-		() => "",
-		() => "s",
-		() => -15,
+		() => "music",
+		() => "off",
 		() => 1,
 		() => -75,
 		() => -90,
@@ -3157,7 +3160,9 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject();
 		},
-		() => 3
+		() => 3,
+		() => "",
+		() => -15
 	];
 }
 
