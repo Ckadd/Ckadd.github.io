@@ -3161,8 +3161,7 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 			return () => n0.ExpObject();
 		},
 		() => 3,
-		() => "",
-		() => -15
+		() => ""
 	];
 }
 
