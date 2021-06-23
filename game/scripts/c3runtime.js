@@ -2943,17 +2943,17 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.Touch.Cnds.OnTouchObject,
+		C3.Plugins.Sprite.Acts.SetScale,
+		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.System.Cnds.CompareBetween,
 		C3.Plugins.Sprite.Acts.Spawn,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.Sprite.Exps.X,
-		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.System.Cnds.While,
 		C3.Plugins.Sprite.Exps.AnimationFrame,
 		C3.Plugins.System.Cnds.LayerVisible,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.System.Cnds.CompareVar,
-		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.Audio.Acts.SetMuted,
@@ -3003,8 +3003,7 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		{gMaxClick: 0},
 		{gLife: 0},
 		{gidleTime: 0},
-		{gElecper: 0},
-		{gIsSound: 0}
+		{gElecper: 0}
 	];
 }
 
@@ -3125,6 +3124,8 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		() => -90,
 		() => 0,
 		() => "",
+		() => 0.8,
+		() => 0.1,
 		() => 20,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
