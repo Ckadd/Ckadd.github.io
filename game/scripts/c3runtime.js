@@ -2957,8 +2957,7 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.Audio.Acts.SetMuted,
-		C3.Plugins.System.Cnds.Else,
-		C3.Plugins.System.Cnds.OnLoadFinished
+		C3.Plugins.System.Cnds.Else
 		];
 	};
 	self.C3_JsPropNameTable = [
