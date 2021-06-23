@@ -2931,8 +2931,8 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		C3.Plugins.Sprite.Exps.AnimationFrameCount,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.System.Acts.SetLayerVisible,
-		C3.Plugins.Audio.Cnds.IsTagPlaying,
 		C3.Plugins.Audio.Acts.Play,
+		C3.Plugins.Audio.Cnds.IsTagPlaying,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.System.Cnds.Every,
@@ -2953,11 +2953,7 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		C3.Plugins.Sprite.Exps.AnimationFrame,
 		C3.Plugins.System.Cnds.LayerVisible,
 		C3.Plugins.System.Acts.GoToLayout,
-		C3.Plugins.System.Cnds.CompareVar,
-		C3.Plugins.Mouse.Cnds.OnObjectClicked,
-		C3.Plugins.Sprite.Cnds.CompareFrame,
-		C3.Plugins.Audio.Acts.SetMuted,
-		C3.Plugins.System.Cnds.Else
+		C3.Plugins.System.Cnds.CompareVar
 		];
 	};
 	self.C3_JsPropNameTable = [
@@ -3116,13 +3112,13 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 			return () => v0.GetValue();
 		},
 		() => "popup_wheel",
+		() => 0,
+		() => "",
 		() => "s",
 		() => -15,
 		() => 1,
 		() => -75,
 		() => -90,
-		() => 0,
-		() => "",
 		() => 0.8,
 		() => 0.1,
 		() => 20,
@@ -3161,11 +3157,7 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject();
 		},
-		() => 3,
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (1 - n0.ExpObject());
-		}
+		() => 3
 	];
 }
 
