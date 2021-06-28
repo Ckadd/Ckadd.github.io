@@ -3252,7 +3252,7 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 	}
 
 	self.C3_ExpressionFuncs = [
-		() => 3,
+		() => 60,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();
@@ -3313,6 +3313,7 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		() => 7,
 		() => 0.3,
 		() => "popup_wheel",
+		() => 3,
 		() => "",
 		() => 150,
 		() => "Tuch",
