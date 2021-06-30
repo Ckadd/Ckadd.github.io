@@ -3141,6 +3141,7 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		{bt_info: 0},
 		{Ray: 0},
 		{wind: 0},
+		{SpriteFont2: 0},
 		{gScore: 0},
 		{gPlayer: 0},
 		{gNumCountClick: 0},
