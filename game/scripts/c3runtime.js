@@ -3065,13 +3065,13 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.System.Exps.int,
 		C3.Plugins.Sprite.Acts.SetVisible,
-		C3.Plugins.System.Cnds.LayerVisible,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.Audio.Acts.StopAll,
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Plugins.System.Cnds.For,
 		C3.Plugins.System.Exps.loopindex,
+		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.Button.Cnds.OnClicked,
 		C3.Plugins.System.Acts.ResetGlobals
 		];
@@ -3309,7 +3309,6 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		() => 3,
 		() => 7,
 		() => 0.3,
-		() => "popup_wheel",
 		() => "",
 		() => 150,
 		p => {
