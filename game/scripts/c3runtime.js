@@ -3039,8 +3039,6 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		C3.Plugins.Arr,
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.System.Acts.SetVar,
-		C3.Plugins.System.Exps.int,
-		C3.Plugins.System.Exps.random,
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.Audio.Acts.Play,
@@ -3058,13 +3056,15 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		C3.Plugins.Sprite.Acts.SetScale,
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.System.Cnds.CompareBetween,
+		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.Sprite.Acts.Spawn,
+		C3.Plugins.System.Exps.random,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Y,
 		C3.Plugins.Text.Acts.SetText,
+		C3.Plugins.System.Exps.int,
 		C3.Plugins.Sprite.Acts.SetVisible,
-		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.System.Cnds.LayerVisible,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.System.Cnds.IsGroupActive,
@@ -3140,6 +3140,7 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 		{info_bt: 0},
 		{bt_info: 0},
 		{Ray: 0},
+		{wind: 0},
 		{gScore: 0},
 		{gPlayer: 0},
 		{gNumCountClick: 0},
@@ -3253,11 +3254,6 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 
 	self.C3_ExpressionFuncs = [
 		() => 60,
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const f1 = p._GetNode(1).GetBoundMethod();
-			return () => f0(f1(1, 14));
-		},
 		() => "popup_dead",
 		() => "rules",
 		() => "on",
@@ -3310,12 +3306,17 @@ value:this._waitTime,onedit:v=>this._waitTime=v},{name:prefix+".properties.fade-
 			const v1 = p._GetNode(1).GetVar();
 			return () => f0(v1.GetValue());
 		},
+		() => 3,
 		() => 7,
 		() => 0.3,
 		() => "popup_wheel",
-		() => 3,
 		() => "",
 		() => 150,
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => f0(f1(1, 14));
+		},
 		() => "Tuch",
 		() => 0.2,
 		() => "Function",
